@@ -15,6 +15,7 @@ export abstract class AbstractService {
   }
 
   getByUrl(url: string): Observable<any> {
-    return this.httpClient.get(this.url + url);
+    const arr = url.split('/');
+    return this.getById(Number(arr[arr.length - 2]));
   }
 }

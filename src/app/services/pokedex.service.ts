@@ -9,8 +9,7 @@ import {Pokedex} from '../models/pokedex';
 })
 export class PokedexService extends AbstractService {
 
-  pokedexMap: Map<number, Observable<any>> = new Map<number, Observable<Pokedex>>();
-  pokedexes: Observable<any> = null;
+  pokedexMap: Map<number, Observable<any>> = new Map<number, Observable<any>>();
 
   constructor(httpClient: HttpClient) {
     super(httpClient);
@@ -19,9 +18,5 @@ export class PokedexService extends AbstractService {
 
   getById(id: number): Observable<any> {
     return this.pokedexMap[id] = this.pokedexMap[id] || super.getById(id);
-  }
-
-  getAllPokedex(): Observable<any> {
-    return this.pokedexes = this.pokedexes || super.getAll();
   }
 }

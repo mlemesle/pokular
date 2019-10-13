@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   constructor(private pokedexService: PokedexService) {}
 
   ngOnInit() {
-      this.pokedexService.getAllPokedex().subscribe(
+      this.pokedexService.getAll().subscribe(
         (incomingData) => this.pokedexList = ResourceFactory.buildResourceFromData(NamedApiResourceList, incomingData),
         (error) => console.log('An error occurred ! ' + error)
       );

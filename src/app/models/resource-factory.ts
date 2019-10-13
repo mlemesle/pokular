@@ -7,8 +7,10 @@ export class ResourceFactory {
   public static buildResourceListFromDataList<T>(c: new(data: any) => T, data: any[]): T[] {
     const l: T[] = [];
 
-    for (const e of data) {
-      l.push(this.buildResourceFromData(c, e));
+    if (data) {
+      for (const e of data) {
+        l.push(this.buildResourceFromData(c, e));
+      }
     }
 
     return l;

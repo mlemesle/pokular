@@ -2,5 +2,6 @@
   <h4>{{ pokedex.name }}</h4>
 
   <div class="list-group">
+    <app-pokemon *ngFor="let pokemonEntry of pokedex.pokemonEntries" pokemonUrl="{{ pokemonEntry.pokemonSpecies.url }}"></app-pokemon>
   </div>
 </div>
