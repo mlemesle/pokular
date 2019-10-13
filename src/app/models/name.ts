@@ -7,7 +7,9 @@ export class Name {
   language: NamedApiResource;
 
   constructor(data: any) {
-    this.name = data.name;
-    this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+    if (data) {
+      this.name = data.name;
+      this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+    }
   }
 }

@@ -8,8 +8,10 @@ export class FlavorText {
   version: NamedApiResource;
 
   constructor(data: any) {
-    this.flavorText = data.flavor_text;
-    this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
-    this.version = ResourceFactory.buildResourceFromData(NamedApiResource, data.version);
+    if (data) {
+      this.flavorText = data.flavor_text;
+      this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+      this.version = ResourceFactory.buildResourceFromData(NamedApiResource, data.version);
+    }
   }
 }

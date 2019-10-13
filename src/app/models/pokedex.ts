@@ -16,13 +16,15 @@ export class Pokedex {
   versionGroups: NamedApiResource[];
 
   constructor(data: any) {
-    this.id = data.id;
-    this.name = data.name;
-    this.isMainSeries = data.is_main_series;
-    this.descriptions = ResourceFactory.buildResourceListFromDataList(Description, data.descriptions);
-    this.names = ResourceFactory.buildResourceListFromDataList(Name, data.names);
-    this.pokemonEntries = ResourceFactory.buildResourceListFromDataList(PokemonEntry, data.pokemon_entries);
-    this.region = ResourceFactory.buildResourceFromData(NamedApiResource, data.region);
-    this.versionGroups = ResourceFactory.buildResourceListFromDataList(NamedApiResource, data.version_groups);
+    if (data) {
+      this.id = data.id;
+      this.name = data.name;
+      this.isMainSeries = data.is_main_series;
+      this.descriptions = ResourceFactory.buildResourceListFromDataList(Description, data.descriptions);
+      this.names = ResourceFactory.buildResourceListFromDataList(Name, data.names);
+      this.pokemonEntries = ResourceFactory.buildResourceListFromDataList(PokemonEntry, data.pokemon_entries);
+      this.region = ResourceFactory.buildResourceFromData(NamedApiResource, data.region);
+      this.versionGroups = ResourceFactory.buildResourceListFromDataList(NamedApiResource, data.version_groups);
+    }
   }
 }

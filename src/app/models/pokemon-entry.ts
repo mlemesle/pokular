@@ -7,7 +7,9 @@ export class PokemonEntry {
   pokemonSpecies: NamedApiResource;
 
   constructor(data: any) {
-    this.entryNumber = data.entry_number;
-    this.pokemonSpecies = ResourceFactory.buildResourceFromData(NamedApiResource, data.pokemon_species);
+    if (data) {
+      this.entryNumber = data.entry_number;
+      this.pokemonSpecies = ResourceFactory.buildResourceFromData(NamedApiResource, data.pokemon_species);
+    }
   }
 }

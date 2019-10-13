@@ -9,9 +9,11 @@ export class NamedApiResourceList {
   results: NamedApiResource[];
 
   constructor(data: any) {
-    this.count = data.count;
-    this.next = data.next;
-    this.previous = data.previous;
-    this.results = ResourceFactory.buildResourceListFromDataList(NamedApiResource, data.results);
+    if (data) {
+      this.count = data.count;
+      this.next = data.next;
+      this.previous = data.previous;
+      this.results = ResourceFactory.buildResourceListFromDataList(NamedApiResource, data.results);
+    }
   }
 }

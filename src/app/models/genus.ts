@@ -7,7 +7,9 @@ export class Genus {
   language: NamedApiResource;
 
   constructor(data: any) {
-    this.genus = data.genus;
-    this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+    if (data) {
+      this.genus = data.genus;
+      this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+    }
   }
 }

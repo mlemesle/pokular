@@ -4,7 +4,9 @@ export class NamedApiResource {
   url: string;
 
   constructor(data: any) {
-    this.name = data.name;
-    this.url = data.url;
+    if (data) {
+      this.name = data.name;
+      this.url = data.url;
+    }
   }
 }

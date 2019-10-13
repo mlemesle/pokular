@@ -7,7 +7,9 @@ export class PokemonSpeciesVariety {
   pokemon: NamedApiResource;
 
   constructor(data: any) {
-    this.isDefault = data.default;
-    this.pokemon = ResourceFactory.buildResourceFromData(NamedApiResource, data.pokemon);
+    if (data) {
+      this.isDefault = data.default;
+      this.pokemon = ResourceFactory.buildResourceFromData(NamedApiResource, data.pokemon);
+    }
   }
 }

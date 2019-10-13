@@ -3,6 +3,8 @@ export class ApiResource {
   url: string;
 
   constructor(data: any) {
-    this.url = data.url;
+    if (data) {
+      this.url = data.url;
+    }
   }
 }

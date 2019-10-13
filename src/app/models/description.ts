@@ -7,7 +7,9 @@ export class Description {
   language: NamedApiResource;
 
   constructor(data: any) {
-    this.description = data.description;
-    this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+    if (data) {
+      this.description = data.description;
+      this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
+    }
   }
 }
