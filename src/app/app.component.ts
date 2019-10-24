@@ -8,7 +8,7 @@ import {LanguageService} from './services/language.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title = 'pokular';
   language = this.languageService.language;
@@ -16,5 +16,9 @@ export class AppComponent {
 
   constructor(private pokedexService: PokedexService,
               private languageService: LanguageService) {
+  }
+
+  ngOnInit(): void {
+    this.languageService.languageSubject.subscribe((newLanguage) => this.language = newLanguage);
   }
 }
