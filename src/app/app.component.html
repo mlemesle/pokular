@@ -11,11 +11,12 @@
             Pokédex
           </a>
           <div *ngIf="pokedexList" class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a *ngFor="let pokedex of pokedexList.results" routerLink="/pokedex/{{ pokedex.url | slice:pokedex.url.substring(0, pokedex.url.length-1).lastIndexOf('/'):pokedex.url.length-1}}" class="dropdown-item">{{ pokedex.name }}</a>
+            <a *ngFor="let pokedex of pokedexList" routerLink="/pokedex/{{ pokedex.name }}" class="dropdown-item">{{ pokedex.names | getTranslation: language }}</a>
           </div>
         </li>
       </ul>
     </div>
+  <app-language [language]="language"></app-language>
   </div>
 </nav>
 

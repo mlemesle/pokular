@@ -8,7 +8,8 @@ import {Observable} from 'rxjs';
 })
 export class PokemonService extends AbstractService {
 
-  pokemonMap: Map<number, Observable<any>> = new Map<number, Observable<any>>();
+  pokemonMapById: Map<number, Observable<any>> = new Map<number, Observable<any>>();
+  pokemonMapByName: Map<string, Observable<any>> = new Map<string, Observable<any>>();
 
   constructor(httpClient: HttpClient) {
     super(httpClient);
@@ -16,6 +17,10 @@ export class PokemonService extends AbstractService {
   }
 
   getById(id: number): Observable<any> {
-    return this.pokemonMap[id] = this.pokemonMap[id] || super.getById(id);
+    return this.pokemonMapById[id] = this.pokemonMapById[id] || super.getById(id);
+  }
+
+  getByName(name: string): Observable<any> {
+    return this.pokemonMapByName[name] = this.pokemonMapByName[name] || super.getByName(name);
   }
 }

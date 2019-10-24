@@ -24,78 +24,97 @@
   opacity:0.85
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-normal {
   background-color:#aa9
 }
 
+/*noinspection ALL*/
 .type-fire {
   background-color:#f42
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-water {
   background-color:#39f
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-electric {
   background-color:#fc3
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-grass {
   background-color:#7c5
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-ice {
   background-color:#6cf
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-fighting {
   background-color:#b54
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-poison {
   background-color:#a59
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-ground {
   background-color:#db5
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-flying {
   background-color:#89f
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-psychic {
   background-color:#f59
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-bug {
   background-color:#ab2
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-rock {
   background-color:#ba6
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-ghost {
   background-color:#66b
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-dragon {
   background-color:#76e
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-dark {
   background-color:#754
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-steel {
   background-color:#aab
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-fairy {
   background-color:#e9e
 }
 
+/*noinspection CssUnusedSymbol*/
 .type-curse {
   background-color:#698
 }

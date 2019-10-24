@@ -1,15 +1,19 @@
 import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
+import {AbstractTranslatableModel} from './abstract-translatable-model';
 
-export class Genus {
+export class Genus extends AbstractTranslatableModel {
 
   genus: string;
-  language: NamedApiResource;
 
   constructor(data: any) {
     if (data) {
+      super(ResourceFactory.buildResourceFromData(NamedApiResource, data.language));
       this.genus = data.genus;
-      this.language = ResourceFactory.buildResourceFromData(NamedApiResource, data.language);
     }
+  }
+
+  getValue(): string {
+    return this.genus;
   }
 }

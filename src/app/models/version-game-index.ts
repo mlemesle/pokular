@@ -12,5 +12,4 @@ export class VersionGameIndex {
       this.version = ResourceFactory.buildResourceFromData(NamedApiResource, data.version);
     }
   }
-
 }

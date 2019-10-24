@@ -1,7 +1,5 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {PokemonService} from '../services/pokemon.service';
-import {Subscription} from 'rxjs';
-import {PokemonSpecies} from '../models/pokemon-species';
 import {Pokemon} from '../models/pokemon';
 import {ResourceFactory} from '../models/resource-factory';
 
@@ -12,13 +10,13 @@ import {ResourceFactory} from '../models/resource-factory';
 })
 export class PokemonComponent implements OnInit {
 
-  @Input() private pokemonUrl: string;
+  @Input() private pokemonName: string;
   pokemon: Pokemon;
 
   constructor(private pokemonSpeciesService: PokemonService) {}
 
   ngOnInit() {
-    this.pokemonSpeciesService.getByUrl(this.pokemonUrl).subscribe(
+    this.pokemonSpeciesService.getByName(this.pokemonName).subscribe(
       (incomingData) => this.pokemon = ResourceFactory.buildResourceFromData(Pokemon, incomingData),
       (error) => console.log('An error occured ! ' + error)
     );

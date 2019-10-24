@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PokedexService} from './services/pokedex.service';
-import {ResourceFactory} from './models/resource-factory';
 import {Pokedex} from './models/pokedex';
-import {NamedApiResourceList} from './models/named-api-resource-list';
+import {LanguageService} from './services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -12,14 +11,17 @@ import {NamedApiResourceList} from './models/named-api-resource-list';
 export class AppComponent implements OnInit {
 
   title = 'pokular';
-  pokedexList: NamedApiResourceList;
+  language = 'fr';
+  pokedexList: Pokedex[] = this.pokedexService.pokedexList;
 
-  constructor(private pokedexService: PokedexService) {}
+  constructor(private pokedexService: PokedexService,
+              private languageService: LanguageService) {
+  }
 
   ngOnInit() {
-      this.pokedexService.getAll().subscribe(
-        (incomingData) => this.pokedexList = ResourceFactory.buildResourceFromData(NamedApiResourceList, incomingData),
-        (error) => console.log('An error occurred ! ' + error)
-      );
+    this.languageService.languageSubject.subscribe((newLanguage: string) => {
+        this.language = newLanguage;
+      }
+    );
   }
 }

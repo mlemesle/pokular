@@ -1,7 +1,7 @@
 <div *ngIf="pokedex">
-  <h4>{{ pokedex.name }}</h4>
+  <h4>{{ pokedex.names | getTranslation:'fr' }}</h4>
 
   <div class="list-group">
-    <app-pokemon *ngFor="let pokemonEntry of pokedex.pokemonEntries" pokemonUrl="{{ pokemonEntry.pokemonSpecies.url }}"></app-pokemon>
+    <app-pokemon *ngFor="let pokemonEntry of pokedex.pokemonEntries" pokemonName="{{ pokemonEntry.pokemonSpecies.name }}"></app-pokemon>
   </div>
 </div>
