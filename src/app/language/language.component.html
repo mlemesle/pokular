@@ -1,6 +1,5 @@
 <div *ngIf="languageList">
-  <select (change)="changeLanguage($event.target.value)" class="mdb-select md-form">
-    <option value="" disabled selected>Langue</option>
-    <option *ngFor="let l of languageList" value="{{ l.name }}">{{ l.names | getTranslation: language }}</option>
+  <select (change)="changeLanguage($event.target.value)" class="mdb-select">
+    <option *ngFor="let l of languageList" [selected]="l.name === language" value="{{ l.name }}">{{ l.names | getTranslation: language }}</option>
   </select>
 </div>

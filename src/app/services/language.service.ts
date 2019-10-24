@@ -10,8 +10,7 @@ import {Pokedex} from '../models/pokedex';
 })
 export class LanguageService extends AbstractService {
 
-  language = 'fr';
-  languageSubject = new Subject<string>();
+  language = 'en';
   languageList: Language[] = [];
 
   constructor(httpClient: HttpClient) {
@@ -22,6 +21,5 @@ export class LanguageService extends AbstractService {
 
   changeLanguage(newLanguage: string) {
     this.language = newLanguage;
-    this.languageSubject.next(this.language);
   }
 }
