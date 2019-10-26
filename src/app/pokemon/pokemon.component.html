@@ -1,5 +1,5 @@
 <div *ngIf="pokemon" class="list-group-item">
-  <p>{{ pokemon.name }}</p>
+  <span>{{ pokemon.name }}</span>
   <img src="{{ pokemon.sprites.frontDefault }}" alt="Image de {{ pokemon.name }}">
-  <div *ngFor="let type of pokemon.types" class="type-icon type-{{ type.type.name }}">{{ type.type.name }}</div>
+  <span *ngFor="let type of pokemon.types" class="type-icon type-{{ type.type.name }}">{{ type.type.name }}</span>
 </div>
