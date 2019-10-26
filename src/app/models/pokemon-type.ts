@@ -1,7 +1,8 @@
 import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
+import {ModelInterface} from './model-interface';
 
-export class PokemonType {
+export class PokemonType implements ModelInterface {
 
   slot: number;
   type: NamedApiResource;

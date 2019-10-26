@@ -2,23 +2,20 @@ import {Component, OnInit} from '@angular/core';
 import {PokedexService} from './services/pokedex.service';
 import {Pokedex} from './models/pokedex';
 import {LanguageService} from './services/language.service';
+import {AbstractComponent} from './abstract.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent extends AbstractComponent {
 
   title = 'pokular';
-  language = this.languageService.language;
   pokedexList: Pokedex[] = this.pokedexService.pokedexList;
 
   constructor(private pokedexService: PokedexService,
-              private languageService: LanguageService) {
-  }
-
-  ngOnInit(): void {
-    this.languageService.languageSubject.subscribe((newLanguage) => this.language = newLanguage);
+              protected languageService: LanguageService) {
+    super(languageService);
   }
 }

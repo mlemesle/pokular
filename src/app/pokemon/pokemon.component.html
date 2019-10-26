@@ -1,5 +1,9 @@
-<div *ngIf="pokemon" class="list-group-item">
-  <span>{{ pokemon.name }}</span>
-  <img src="{{ pokemon.sprites.frontDefault }}" alt="Image de {{ pokemon.name }}">
-  <span *ngFor="let type of pokemon.types" class="type-icon type-{{ type.type.name }}">{{ type.type.name }}</span>
+<div *ngIf="pokemon && pokemonSpecies" class="list-group-item container-fluid position-relative pokemonItem">
+  <span class="pokemonId position-absolute text-muted">#{{ pokemon.id }}</span>
+  <span class="position-absolute pokemonName">{{ pokemonSpecies.names | getTranslation: language }}</span>
+  <img class="pokemonSprite position-absolute" src="{{ pokemon.sprites.frontDefault }}" alt="Image de {{ pokemonSpecies.names | getTranslation: language }}">
+
+  <div class="pokemonTypes position-absolute">
+    <app-type *ngFor="let type of pokemon.types" [typeName]="type.type.name"></app-type>
+  </div>
 </div>

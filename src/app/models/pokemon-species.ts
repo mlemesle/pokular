@@ -6,6 +6,8 @@ import {Genus} from './genus';
 import {PokemonSpeciesVariety} from './pokemon-species-variety';
 import {PokemonSpeciesDexEntry} from './pokemon-species-dex-entry';
 import {ResourceFactory} from './resource-factory';
+import {Name} from './name';
+import {PalParkEncounterArea} from './pal-park-encounter-area';
 
 export class PokemonSpecies {
 
@@ -28,6 +30,8 @@ export class PokemonSpecies {
   evolutionChain: ApiResource;
   habitat: NamedApiResource;
   generation: NamedApiResource;
+  names: Name[];
+  palParkEncounters: PalParkEncounterArea[];
   flavorTextEntries: FlavorText[];
   formDescriptions: Description[];
   genera: Genus[];
@@ -54,6 +58,8 @@ export class PokemonSpecies {
       this.evolutionChain = ResourceFactory.buildResourceFromData(NamedApiResource, data.evolution_chain);
       this.habitat = ResourceFactory.buildResourceFromData(NamedApiResource, data.habitat);
       this.generation = ResourceFactory.buildResourceFromData(NamedApiResource, data.generation);
+      this.names = ResourceFactory.buildResourceListFromDataList(Name, data.names);
+      this.palParkEncounters = ResourceFactory.buildResourceListFromDataList(PalParkEncounterArea, data.pal_park_encounters);
       this.flavorTextEntries = ResourceFactory.buildResourceListFromDataList(FlavorText, data.flavor_text_entries);
       this.formDescriptions = ResourceFactory.buildResourceListFromDataList(Description, data.form_descriptions);
       this.genera = ResourceFactory.buildResourceListFromDataList(Genus, data.genera);

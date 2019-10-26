@@ -1,7 +1,8 @@
 import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
+import {ModelInterface} from './model-interface';
 
-export class PokemonStat {
+export class PokemonStat implements ModelInterface {
 
   stat: NamedApiResource;
   effort: number;

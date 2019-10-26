@@ -7,8 +7,9 @@ import {PokemonSprites} from './pokemon-sprites';
 import {PokemonStat} from './pokemon-stat';
 import {PokemonType} from './pokemon-type';
 import {ResourceFactory} from './resource-factory';
+import {ModelInterface} from './model-interface';
 
-export class Pokemon {
+export class Pokemon implements ModelInterface {
 
   id: number;
   name: string;

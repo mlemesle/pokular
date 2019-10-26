@@ -3,8 +3,9 @@ import {Name} from './name';
 import {PokemonEntry} from './pokemon-entry';
 import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
+import {ModelInterface} from './model-interface';
 
-export class Pokedex {
+export class Pokedex implements ModelInterface {
 
   id: number;
   name: string;

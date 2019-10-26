@@ -1,15 +1,14 @@
 import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
-import {ModelInterface} from './model-interface';
 
-export class PokemonSpeciesVariety implements ModelInterface {
+export class TypePokemon {
 
-  isDefault: boolean;
+  slot: number;
   pokemon: NamedApiResource;
 
   constructor(data: any) {
     if (data) {
-      this.isDefault = data.default;
+      this.slot = data.slot;
       this.pokemon = ResourceFactory.buildResourceFromData(NamedApiResource, data.pokemon);
     }
   }

@@ -1,8 +1,9 @@
 import {NamedApiResource} from './named-api-resource';
 import {PokemonMoveVersion} from './pokemon-move-version';
 import {ResourceFactory} from './resource-factory';
+import {ModelInterface} from './model-interface';
 
-export class PokemonMove {
+export class PokemonMove implements ModelInterface {
 
   move: NamedApiResource;
   versionGroupDetails: PokemonMoveVersion[];

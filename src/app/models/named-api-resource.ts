@@ -1,4 +1,6 @@
-export class NamedApiResource {
+import {ModelInterface} from './model-interface';
+
+export class NamedApiResource implements ModelInterface {
 
   name: string;
   url: string;

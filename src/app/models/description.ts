@@ -1,8 +1,9 @@
 import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
 import {AbstractTranslatableModel} from './abstract-translatable-model';
+import {ModelInterface} from './model-interface';
 
-export class Description extends AbstractTranslatableModel {
+export class Description extends AbstractTranslatableModel implements ModelInterface {
 
   description: string;
 

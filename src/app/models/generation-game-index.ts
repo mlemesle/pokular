@@ -2,15 +2,15 @@ import {NamedApiResource} from './named-api-resource';
 import {ResourceFactory} from './resource-factory';
 import {ModelInterface} from './model-interface';
 
-export class VersionGameIndex implements ModelInterface {
+export class GenerationGameIndex implements ModelInterface {
 
   gameIndex: number;
-  version: NamedApiResource;
+  generation: NamedApiResource;
 
   constructor(data: any) {
     if (data) {
       this.gameIndex = data.game_index;
-      this.version = ResourceFactory.buildResourceFromData(NamedApiResource, data.version);
+      this.generation = ResourceFactory.buildResourceFromData(NamedApiResource, data.generation);
     }
   }
 }

@@ -16,7 +16,7 @@ export class PokedexService extends AbstractService {
   constructor(httpClient: HttpClient) {
     super(httpClient);
     this.url = 'https://pokeapi.co/api/v2/pokedex/';
-    this.populateModelModelList<Pokedex>(this.pokedexList, Pokedex, (a, b) => a.id - b.id);
+    this.populateModelList<Pokedex>(this.pokedexList, Pokedex, (a, b) => a.id - b.id);
   }
 
   getById(id: number): Observable<any> {

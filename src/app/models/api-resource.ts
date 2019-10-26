@@ -1,4 +1,6 @@
-export class ApiResource {
+import {ModelInterface} from './model-interface';
+
+export class ApiResource implements ModelInterface {
 
   url: string;
 

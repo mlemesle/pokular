@@ -11,6 +11,9 @@ import {GetTranslationPipe} from './pipes/get-translation/get-translation.pipe';
 import {LanguageComponent} from './language/language.component';
 import {PokemonService} from './services/pokemon.service';
 import {LanguageService} from './services/language.service';
+import {PokemonSpeciesService} from './services/pokemon-species.service';
+import {TypeService} from './services/type.service';
+import { TypeComponent } from './type/type.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import {LanguageService} from './services/language.service';
     PokedexComponent,
     PokemonComponent,
     GetTranslationPipe,
-    LanguageComponent
+    LanguageComponent,
+    TypeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import {LanguageService} from './services/language.service';
   providers: [
     PokedexService,
     PokemonService,
-    LanguageService
+    PokemonSpeciesService,
+    LanguageService,
+    TypeService
   ],
   bootstrap: [AppComponent]
 })

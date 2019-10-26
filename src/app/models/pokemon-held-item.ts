@@ -1,8 +1,9 @@
 import {NamedApiResource} from './named-api-resource';
 import {PokemonHeldItemVersion} from './pokemon-held-item-version';
 import {ResourceFactory} from './resource-factory';
+import {ModelInterface} from './model-interface';
 
-export class PokemonHeldItem {
+export class PokemonHeldItem implements ModelInterface {
 
   item: NamedApiResource;
   versionDetails: PokemonHeldItemVersion[];

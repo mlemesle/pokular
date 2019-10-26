@@ -17,7 +17,7 @@ export class LanguageService extends AbstractService {
   constructor(httpClient: HttpClient) {
     super(httpClient);
     this.url = 'https://pokeapi.co/api/v2/language/';
-    this.populateModelModelList<Language>(this.languageList, Language, (a, b) => a.id - b.id);
+    this.populateModelList<Language>(this.languageList, Language, (a, b) => a.id - b.id);
   }
 
   changeLanguage(newLanguage: string) {

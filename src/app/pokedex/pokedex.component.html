@@ -4,7 +4,7 @@
     <p class="text-muted text-center">{{ pokedex.descriptions | getTranslation: language }}</p>
   </div>
 
-  <div class="list-group col-sm-3 overflow-auto scrolling-position">
+  <div class="list-group col-sm-2 overflow-auto scrolling-position">
     <app-pokemon *ngFor="let pokemonEntry of pokedex.pokemonEntries" pokemonName="{{ pokemonEntry.pokemonSpecies.name }}"></app-pokemon>
   </div>
 </div>

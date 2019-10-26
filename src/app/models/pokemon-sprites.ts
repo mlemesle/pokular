@@ -1,4 +1,6 @@
-export class PokemonSprites {
+import {ModelInterface} from './model-interface';
+
+export class PokemonSprites implements ModelInterface {
 
   frontDefault: string;
   frontShiny: string;

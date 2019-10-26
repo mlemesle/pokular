@@ -1,7 +1,8 @@
 import {ResourceFactory} from './resource-factory';
 import {Name} from './name';
+import {ModelInterface} from './model-interface';
 
-export class Language {
+export class Language implements ModelInterface {
 
   id: number;
   name: string;
