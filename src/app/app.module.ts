@@ -14,6 +14,7 @@ import {LanguageService} from './services/language.service';
 import {PokemonSpeciesService} from './services/pokemon-species.service';
 import {TypeService} from './services/type.service';
 import { TypeComponent } from './type/type.component';
+import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TypeComponent } from './type/type.component';
     PokemonComponent,
     GetTranslationPipe,
     LanguageComponent,
-    TypeComponent
+    TypeComponent,
+    PokemonDetailComponent
   ],
   imports: [
     BrowserModule,

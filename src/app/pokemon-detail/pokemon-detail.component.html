@@ -1,16 +1,17 @@
-<div *ngIf="pokemon && pokemonSpecies" (click)="onPokemonSelected()"
-     class="list-group-item container-fluid">
+<div *ngIf="pokemon && pokemonSpecies" class="container-fluid">
   <div class="row">
     <div class="col">
-      <span class="mt-5 text-muted clearfix">#{{ pokemon.id }}</span>
+      <span class="text-muted">#{{ pokemon.id }}</span>
       <span class="">{{ pokemonSpecies.names | getTranslation: language }}</span>
     </div>
     <div class="col">
-      <img class="img-fluid" src="{{ pokemon.sprites.frontDefault }}"
+      <img class="" src="{{ pokemon.sprites.frontDefault }}"
            alt="Image de {{ pokemonSpecies.names | getTranslation: language }}">
     </div>
     <div class="col">
       <app-type *ngFor="let type of pokemon.types" [typeName]="type.type.name"></app-type>
     </div>
   </div>
+
+
 </div>

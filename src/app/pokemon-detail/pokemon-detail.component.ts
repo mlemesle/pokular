@@ -1,21 +1,20 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {LanguageService} from '../services/language.service';
 import {PokemonService} from '../services/pokemon.service';
-import {Pokemon} from '../models/pokemon';
-import {ResourceFactory} from '../models/resource-factory';
 import {PokemonSpeciesService} from '../services/pokemon-species.service';
+import {ResourceFactory} from '../models/resource-factory';
+import {Pokemon} from '../models/pokemon';
 import {PokemonSpecies} from '../models/pokemon-species';
 import {AbstractComponent} from '../abstract.component';
-import {LanguageService} from '../services/language.service';
 
 @Component({
-  selector: 'app-pokemon',
-  templateUrl: './pokemon.component.html',
-  styleUrls: ['./pokemon.component.css']
+  selector: 'app-pokemon-detail',
+  templateUrl: './pokemon-detail.component.html',
+  styleUrls: ['./pokemon-detail.component.css']
 })
-export class PokemonComponent extends AbstractComponent implements OnInit {
+export class PokemonDetailComponent extends AbstractComponent implements OnChanges {
 
   @Input() protected pokemonName: string;
-  @Output() pokemonSelected = new EventEmitter();
   pokemon: Pokemon;
   pokemonSpecies: PokemonSpecies;
 
@@ -25,11 +24,7 @@ export class PokemonComponent extends AbstractComponent implements OnInit {
     super(languageService);
   }
 
-  onPokemonSelected() {
-    this.pokemonSelected.emit(this.pokemonName);
-  }
-
-  protected refreshAttributes() {
+  private refreshAttributes() {
     this.pokemonService.getByName(this.pokemonName).subscribe(
       (incomingData) => this.pokemon = ResourceFactory.buildResourceFromData(Pokemon, incomingData),
       (error) => console.log('An error occured ! ' + error)
@@ -40,8 +35,9 @@ export class PokemonComponent extends AbstractComponent implements OnInit {
     );
   }
 
-  ngOnInit() {
-    super.ngOnInit();
-    this.refreshAttributes();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.pokemonName) {
+      this.refreshAttributes();
+    }
   }
 }

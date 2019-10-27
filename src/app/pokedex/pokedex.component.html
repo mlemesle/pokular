@@ -1,10 +1,19 @@
-<div *ngIf="pokedex" class="m-3">
+<div *ngIf="pokedex" class="m-2">
   <div class="border w-auto">
     <h4 class="h4 text-center">{{ pokedex.names | getTranslation: language }}</h4>
     <p class="text-muted text-center">{{ pokedex.descriptions | getTranslation: language }}</p>
   </div>
 
-  <div class="list-group col-sm-2 overflow-auto scrolling-position">
-    <app-pokemon *ngFor="let pokemonEntry of pokedex.pokemonEntries" pokemonName="{{ pokemonEntry.pokemonSpecies.name }}"></app-pokemon>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="list-group col-md-3 overflow-auto scrolling-position">
+        <app-pokemon *ngFor="let pokemonEntry of pokedex.pokemonEntries"
+                     pokemonName="{{ pokemonEntry.pokemonSpecies.name }}"
+                     (pokemonSelected)="onSelectedPokemon($event)"></app-pokemon>
+      </div>
+      <div class="col-md-9 overflow-auto scrolling-position">
+        <app-pokemon-detail [pokemonName]="selectedPokemonName"></app-pokemon-detail>
+      </div>
+    </div>
   </div>
 </div>

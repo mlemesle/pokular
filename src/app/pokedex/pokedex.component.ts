@@ -14,11 +14,16 @@ import {AbstractComponent} from '../abstract.component';
 export class PokedexComponent extends AbstractComponent implements OnInit {
 
   pokedex: Pokedex;
+  selectedPokemonName: string;
 
   constructor(private pokedexService: PokedexService,
               protected languageService: LanguageService,
               private route: ActivatedRoute) {
     super(languageService);
+  }
+
+  onSelectedPokemon(pokemonName: string) {
+    this.selectedPokemonName = pokemonName;
   }
 
   ngOnInit() {
