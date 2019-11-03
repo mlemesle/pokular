@@ -15,4 +15,8 @@ export class PokemonMoveVersion implements ModelInterface {
       this.levelLearnedAt = data.level_learned_at;
     }
   }
+
+  isCorrectMethodAndVersion(method: string, version: string) {
+    return this.moveLearnMethod.name === method && this.versionGroup.name === version;
+  }
 }

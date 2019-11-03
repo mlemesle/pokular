@@ -1,0 +1,26 @@
+<table class="table table-sm">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Capacité</th>
+    <th scope="col">Type</th>
+    <th scope="col">Classe de dégâts</th>
+    <th scope="col">Puissance</th>
+    <th scope="col">Précision</th>
+    <th scope="col">PP</th>
+    <th scopee="col">Niveau</th>
+  </tr>
+  </thead>
+  <tbody *ngIf="moveViewModels">
+  <tr *ngFor="let move of moveViewModels | getMovesByMethod:'level-up':'red-blue'">
+    <th scope="row">{{ move.move.names | getTranslation: language }}</th>
+    <td>
+      <app-type [typeName]="move.move.type.name"></app-type>
+    </td>
+    <td><img src="assets/move-type/{{ move.move.damageClass.name }}.png"></td>
+    <td>{{ move.move.power }}</td>
+    <td>{{ move.move.accuracy }}%</td>
+    <td>{{ move.move.pp }}</td>
+    <td>{{ move.pokemonMove.versionGroupDetails | getLevelByMethodAndVersion:'level-up':'red-blue' }}</td>
+  </tr>
+  </tbody>
+</table> 

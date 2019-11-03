@@ -10,4 +10,8 @@ export class MoveFlavorText extends AbstractTranslatableWithVersionModel {
       this.flavorText = data.flavor_text;
     }
   }
+
+  getValue(): string {
+    return this.flavorText;
+  }
 }

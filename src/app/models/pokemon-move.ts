@@ -14,4 +14,13 @@ export class PokemonMove implements ModelInterface {
       this.versionGroupDetails = ResourceFactory.buildResourceListFromDataList(PokemonMoveVersion, data.version_group_details);
     }
   }
+
+  isCorrectMethodAndVersion(method: string, version: string) {
+    for (const pmv of this.versionGroupDetails) {
+      if (pmv.isCorrectMethodAndVersion(method, version)) {
+        return true;
+      }
+    }
+    return false;
+  }
 }

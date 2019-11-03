@@ -1,5 +1,6 @@
-import {OnInit, Pipe, PipeTransform} from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 import {AbstractTranslatableModel} from '../../models/abstract-translatable-model';
+import {LanguageService} from '../../services/language.service';
 
 @Pipe({
   name: 'getTranslation'

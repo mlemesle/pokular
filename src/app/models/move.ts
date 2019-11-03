@@ -45,6 +45,7 @@ export class Move {
       this.effectChance = data.effectChance;
       this.pp = data.pp;
       this.priority = data.priority;
+      this.power = data.power;
       this.contestCombos = ResourceFactory.buildResourceFromData(ContestComboSets, data.contest_combos);
       this.contestType = ResourceFactory.buildResourceFromData(NamedApiResource, data.contest_type);
       this.contestEffect = ResourceFactory.buildResourceFromData(ApiResource, data.contest_effect);

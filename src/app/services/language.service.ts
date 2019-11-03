@@ -3,7 +3,6 @@ import {HttpClient} from '@angular/common/http';
 import {AbstractService} from './abstract.service';
 import {Subject} from 'rxjs';
 import {Language} from '../models/language';
-import {Pokedex} from '../models/pokedex';
 
 @Injectable({
   providedIn: 'root'

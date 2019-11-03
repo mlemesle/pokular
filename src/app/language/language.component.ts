@@ -1,7 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {LanguageService} from '../services/language.service';
-import {ResourceFactory} from '../models/resource-factory';
-import {NamedApiResourceList} from '../models/named-api-resource-list';
 import {Language} from '../models/language';
 import {AbstractComponent} from '../abstract.component';
 
